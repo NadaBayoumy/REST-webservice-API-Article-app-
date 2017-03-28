@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://webservice.iti.com/soap/articleservice" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://webservice.iti.com/soap/articleservice">
+<types>
+<xsd:schema targetNamespace="http://webservice.iti.com/soap/articleservice"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+</xsd:schema>
+</types>
+<message name="article.create_new_userRequest">
+  <part name="name" type="xsd:string" />
+  <part name="email" type="xsd:xsd.string" />
+  <part name="password" type="xsd:xsd.string" />
+  <part name="tokenstr" type="xsd:xsd.string" /></message>
+<message name="article.create_new_userResponse">
+  <part name="return" type="xsd:string" /></message>
+<message name="article.check_user_validRequest">
+  <part name="email" type="xsd:xsd.string" />
+  <part name="password" type="xsd:xsd.string" /></message>
+<message name="article.check_user_validResponse">
+  <part name="return" type="xsd:string" /></message>
+<message name="article.getuserinfoRequest">
+  <part name="token" type="xsd:xsd.string" /></message>
+<message name="article.getuserinfoResponse">
+  <part name="return" type="xsd:string" /></message>
+<message name="article.insert_into_articleRequest">
+  <part name="title" type="xsd:xsd.string" />
+  <part name="body" type="xsd:xsd.string" />
+  <part name="token" type="xsd:xsd.string" /></message>
+<message name="article.insert_into_articleResponse">
+  <part name="return" type="xsd:string" /></message>
+<message name="article.view_articleRequest">
+  <part name="id" type="xsd:xsd.int" />
+  <part name="token" type="xsd:xsd.string" /></message>
+<message name="article.view_articleResponse">
+  <part name="return" type="xsd:string" /></message>
+<message name="article.viewarticlesRequest">
+  <part name="token" type="xsd:xsd.string" /></message>
+<message name="article.viewarticlesResponse">
+  <part name="return" type="xsd:string" /></message>
+<message name="article.delete_articleRequest">
+  <part name="token" type="xsd:xsd.string" />
+  <part name="id" type="xsd:xsd.int" /></message>
+<message name="article.delete_articleResponse">
+  <part name="return" type="xsd:string" /></message>
+<portType name="articleservicePortType">
+  <operation name="article.create_new_user">
+    <input message="tns:article.create_new_userRequest"/>
+    <output message="tns:article.create_new_userResponse"/>
+  </operation>
+  <operation name="article.check_user_valid">
+    <input message="tns:article.check_user_validRequest"/>
+    <output message="tns:article.check_user_validResponse"/>
+  </operation>
+  <operation name="article.getuserinfo">
+    <input message="tns:article.getuserinfoRequest"/>
+    <output message="tns:article.getuserinfoResponse"/>
+  </operation>
+  <operation name="article.insert_into_article">
+    <input message="tns:article.insert_into_articleRequest"/>
+    <output message="tns:article.insert_into_articleResponse"/>
+  </operation>
+  <operation name="article.view_article">
+    <input message="tns:article.view_articleRequest"/>
+    <output message="tns:article.view_articleResponse"/>
+  </operation>
+  <operation name="article.viewarticles">
+    <input message="tns:article.viewarticlesRequest"/>
+    <output message="tns:article.viewarticlesResponse"/>
+  </operation>
+  <operation name="article.delete_article">
+    <input message="tns:article.delete_articleRequest"/>
+    <output message="tns:article.delete_articleResponse"/>
+  </operation>
+</portType>
+<binding name="articleserviceBinding" type="tns:articleservicePortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="article.create_new_user">
+    <soap:operation soapAction="http://webservice.iti.com/soapserver.php/article.create_new_user" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="article.check_user_valid">
+    <soap:operation soapAction="http://webservice.iti.com/soapserver.php/article.check_user_valid" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="article.getuserinfo">
+    <soap:operation soapAction="http://webservice.iti.com/soapserver.php/article.getuserinfo" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="article.insert_into_article">
+    <soap:operation soapAction="http://webservice.iti.com/soapserver.php/article.insert_into_article" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="article.view_article">
+    <soap:operation soapAction="http://webservice.iti.com/soapserver.php/article.view_article" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="article.viewarticles">
+    <soap:operation soapAction="http://webservice.iti.com/soapserver.php/article.viewarticles" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="article.delete_article">
+    <soap:operation soapAction="http://webservice.iti.com/soapserver.php/article.delete_article" style="rpc"/>
+    <input><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="articleservice">
+  <port name="articleservicePort" binding="tns:articleserviceBinding">
+    <soap:address location="http://webservice.iti.com/soapserver.php"/>
+  </port>
+</service>
+</definitions>

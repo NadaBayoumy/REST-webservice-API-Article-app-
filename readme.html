@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<title><ul>API LOG in webservice.iti.com</ul></title>
+</head>
+<body>
+<hr/>
+
+<div>
+
+	<div class="bs-example" data-example-id="panel-without-body-with-table"> 
+	<div class="panel panel-default">
+	
+	<div class="panel-heading">
+	Hints:	
+	</div>
+	<br/>
+		- require json  <br/>              
+		- default URL: http://webservice.iti.com/<br/>
+	
+	<div class="panel-heading">
+	 Login
+	</div>
+	
+	
+	<div>
+		Login:<br/>
+
+		- url: /login.php<br/>
+		- method: GET
+	</div>
+
+	<div class="panel-heading">
+		params:
+	</div>
+
+	 <table class="table"> 
+		 <thead>
+		  <tr> 
+		    <th>#</th>
+		  	<th>Name</th>
+			<th>Description</th>
+			<th>Default</th>
+			<th>Required</th>
+			<th>Example</th>
+		  </tr>
+		  </thead>
+	  <tbody>	 
+	    <tr>
+	 		<td></td>
+			<td>email</td>
+			<td>user unique email</td>
+			<td>N/A</td>
+			<td>Yes</td>
+			<td>nada.bayoumy@hotmail.com</td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td>password</td>
+			<td>user password</td>
+			<td>N/A</td>
+			<td>Yes</td>
+			<td>*****</td>
+		</tr>
+	  </tbody> 
+	  </table> 
+
+
+	<div class="panel-heading">
+		response:	
+	</div>
+	
+
+	<table class="table">
+			<tr>
+				<th>#</th>
+				<th>Parameter</th>
+				<th>Description</th>
+				<th>Example</th>
+			</tr>
+			<tr>
+				<td></td>
+				<td>Code</td>
+				<td>response code of request</td>
+				<td>Response-Code: 200</td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td>Message</td>
+				<td>response message</td>
+				<td>message: You have Retrieved results successfully</td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td>Success</td>
+				<td>status</td>
+				<td>Success: true</td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td>Token</td>
+				<td>Token secret for logged in user</td>
+				<td>example: 95392aa17e413474f06394ade38fe998</td>
+			</tr>
+	</table>
+
+	<br/>
+	<div class="panel-heading">
+		response Example:	
+	</div>
+
+
+	<div>
+			{"code":"200","message":["You have Retrieved results successfully"],"success":"true","token":"95392aa17e413474f06394ade38fe998"}	
+	</div>
+	
+	</div>
+	</div>
+
+</div>
+
+
+
+
+
+<hr/>
+	Create:
+
+	- url: /create.php
+	- method: GET
+	- params: 
+<hr/>
+	<table>
+		<tr>
+			<th>Parameter Name</th>
+			<th>Description</th>
+			<th>Default</th>
+			<th>Required</th>
+		</tr>
+
+		<tr>
+			<td>name</td>
+			<td>user name</td>
+			<td></td>
+			<td>Yes</td>
+		</tr>
+
+		<tr>
+			<td>email</td>
+			<td>user email</td>
+			<td></td>
+			<td>Yes</td>
+		</tr>
+
+		<tr>
+			<td>password</td>
+			<td>user password</td>
+			<td></td>
+			<td>Yes</td>
+		</tr>
+
+		<tr>
+			<td>token</td>
+			<td>user token</td>
+			<td></td>
+			<td>Yes</td>
+		</tr>
+	</table>
+
+
+
+	- response:
+
+		<table>
+			<tr>
+				<th>Code</th>
+				<th>Message</th>
+				<th>Success</th>
+				<th>Token</th>
+			</tr>
+
+		</table>
+
+
+
+_______________________________________________________________________________________
+________________________________________________________________________________________
+
+
+
+<hr/>
+	Create a new article:
+
+	- url: /createarticle.php
+	- method: GET
+	- params: 
+<hr/>
+	<table>
+		<tr>
+			<th>Parameter Name</th>
+			<th>Description</th>
+			<th>Default</th>
+			<th>Required</th>
+		</tr>
+
+		<tr>
+			<td>token</td>
+			<td>user logged in token</td>
+			<td></td>
+			<td>Yes</td>
+		</tr>
+
+		<tr>
+			<td>title</td>
+			<td>article title</td>
+			<td></td>
+			<td>Yes</td>
+		</tr>
+
+		<tr>
+			<td>body</td>
+			<td>article body</td>
+			<td></td>
+			<td>NO</td>
+		</tr>
+
+	</table>
+
+
+
+	- response:
+
+		<table>
+			<tr>
+				<th>Code</th>
+				<th>Message</th>
+				<th>Success</th>
+				<th>Token</th>
+			</tr>
+
+		</table>
+
+
+
+
+</body>
+</html>
+
+
+
